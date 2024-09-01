@@ -4,8 +4,6 @@ import { LoanFormComponent } from './loan-form.component';
 import { RouterModule } from '@angular/router';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [LoanFormComponent],
   imports: [
