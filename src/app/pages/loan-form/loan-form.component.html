@@ -1,0 +1,71 @@
+<section class="container">
+    <div class="main-wrapper">
+        <h1 class="text-center text-white">Loan Form</h1>
+        <div class="form-wrapper">
+            <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label class="text-white">Loan Amount</label>
+                        <input type="number" class="form-control" formControlName="loanAmount"
+                            placeholder="Enter Loan Amount"
+                            [ngClass]="{ 'is-invalid': submitted && lf['loanAmount'].errors }">
+                        <div class="invalid-feedback" *ngIf="submitted && lf['loanAmount'].errors">
+                            <div class="text-danger" *ngIf="lf['loanAmount'].errors['required']">
+                                This field is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="text-white">Interest Rate (%)</label>
+                        <input type="number" class="form-control" placeholder="Enter Interest Rate"
+                            formControlName="interestRate"
+                            [ngClass]="{ 'is-invalid': submitted && lf['interestRate'].errors }">
+                        <div class="invalid-feedback" *ngIf="submitted && lf['interestRate'].errors">
+                            <div class="text-danger" *ngIf="lf['interestRate'].errors['required']">
+                                This field is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="form-group col-md-6">
+                        <label class="text-white">Loan Term (Years)</label>
+                        <input type="number" class="form-control" formControlName="loanTerm"
+                            placeholder="Enter Loan Term"
+                            [ngClass]="{ 'is-invalid': submitted && lf['loanTerm'].errors }">
+                        <div class="invalid-feedback" *ngIf="submitted && lf['loanTerm'].errors">
+                            <div class="text-danger" *ngIf="lf['loanTerm'].errors['required']">
+                                This field is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="text-white">Start Date <sup>(Optional)</sup></label>
+                        <input type="date" class="form-control" formControlName="startDate">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label class="text-white">Extra Payment <sup>(Optional)</sup></label>
+                        <input type="number" class="form-control" formControlName="extraPayment">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="text-white">Payment Frequency <sup>(Optional)</sup></label>
+                        <select formControlName="paymentFrequency" class="form-control form-select">
+                            <option value="">Select Payment Frequency</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="weekly">Weekly</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="btn btn-primary " *ngIf="!showLoader">Submit</button>
+                    <button *ngIf="showLoader" class="btn btn-primary">
+                        <i class="fa fa-spinner fa-spin"></i>Loading...
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

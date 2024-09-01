@@ -1,0 +1,153 @@
+.main-wrapper {
+    margin: 30px 60px 30px 60px !important;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 12px;
+    border: 1px solid #002953;
+    padding: 10px;
+
+    .topHead {
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+            padding: 10px 0;
+            font-size: 28px;
+            text-align: start;
+        }
+
+        button {
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #fff;
+            border: 0;
+            cursor: pointer;
+            text-transform: uppercase;
+            background-image: linear-gradient(278deg, #ff8200 16%, #ff5a00 87%);
+        }
+    }
+
+    .responsive-table {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+
+    thead {
+        background-color: #f1f1f1;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    tbody {
+        height: 300px;
+        overflow-y: auto;
+        display: block;
+    }
+
+    thead,
+    tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    .disp-non {
+        text-align: center;
+    }
+
+    .cus-lds-dual-ring {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        position: relative;
+    }
+
+    .cus-lds-dual-ring label {
+        position: absolute;
+        top: 55px;
+        right: 20px;
+    }
+
+    .cus-lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 4px solid #017fa4;
+        border-color: #017fa4 transparent #017fa4 transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+    }
+
+    @keyframes lds-dual-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .card-body {
+        text-align: center;
+        margin-top: 50px;
+
+        .empty {
+            font-size: 30px;
+            color: red;
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .main-wrapper {
+        margin: 10px 20px 10px 20px !important;
+
+        .topHead {
+            display: flex;
+            justify-content: space-between;
+
+            h1 {
+                font-size: 16px;
+            }
+
+            button {
+                width: 140px;
+                border-radius: 20px;
+                font-size: 12px;
+            }
+        }
+
+        table {
+            width: 900px;
+        }
+
+        .full-width {
+            width: 100% !important;
+        }
+
+        .card-body {
+            .empty {
+                font-size: 20px;
+            }
+        }
+    }
+}

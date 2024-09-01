@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="loader" *ngIf="isLoader"></div>
+    <h3 class="text-center" [ngClass]="{'text-danger': schedule.length === 0}" (click)="back()">
+        {{ schedule.length > 0 ? 'Payment Breakdown Data Visualization' : 'Data not Found!' }}
+    </h3>
+    <div id="loanVisualization"></div>
+</div>
