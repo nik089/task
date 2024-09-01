@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ToastrModule } from 'ng6-toastr-notifications';
-import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     BrowserModule,
     AppRoutingModule,
     ToastrModule.forRoot(),
-    NgApexchartsModule
 
   ],
   providers: [],
